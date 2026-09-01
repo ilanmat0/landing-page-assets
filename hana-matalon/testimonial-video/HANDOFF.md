@@ -29,30 +29,40 @@ State as of the terminal switch. Everything below is on local disk in this repo.
 
 Topic is **real-estate investment coaching**, not matchmaking.
 
+## Done in this session
+
+- All **8 transcripts** in `transcripts/` (faster-whisper `medium`).
+- `SELECTS.md` — all 8 clips ranked (tiers 🟢/🔵/⚪) with timecoded lines.
+- `STORYBOARD.md` — draft v1, 12-scene ~1:30 cut, for review.
+
 ## Open items
 
-1. **Push may be incomplete.** Commit `0302f45` (the 8 LFS videos) was pushing in the
-   background at switch time. Check:
+1. **Push may be incomplete.** Commit `0302f45` (the 8 LFS videos) was still uploading
+   in the background at switch time (slow uplink, ~187 MB LFS). Check:
    ```
    git -C "C:\Users\ILANM\בדיקות קלוד קוד\landing-page-assets" log origin/claude/video-editing-uploads-48bf9l..HEAD --oneline
    ```
-   If it prints `0302f45`, the push didn't finish — re-run (needs the GitHub token from
-   the repo-root CLAUDE.md as the HTTPS password):
+   If it prints `0302f45`, re-run (GitHub token from repo-root CLAUDE.md as the HTTPS
+   password; LFS resumes / skips finished objects):
    ```
    cd "C:\Users\ILANM\בדיקות קלוד קוד\landing-page-assets"
    git push origin claude/video-editing-uploads-48bf9l
    ```
-2. **Transcription** — `omer, shlomi, dan, argov, gian` done. If `mvi-9782 / mvi-4099 /
-   mvi-4480` are missing from `transcripts/`, finish them:
-   ```
-   cd "C:\Users\ILANM\בדיקות קלוד קוד\landing-page-assets\hana-matalon\testimonial-video"
-   python scripts/transcribe.py
-   ```
-   (skips whatever's already done)
-3. Whisper `medium` spellings need a cleanup pass before final captions (name lands as
-   "חן/חנה מטלון"). Consider a `large-v3` re-run for caption-grade text.
-4. Next: finish selects for the 5 remaining clips → full STORYBOARD.md → build with the
-   `general-video` hyperframes skill → storyboard review → render.
+2. **Caption cleanup** — `medium` transcripts have name/word errors (see SELECTS.md
+   notes). Hand-fix the ~8 selected spans, or re-run `scripts/transcribe.py` after
+   editing it to `MODEL = "large-v3"`.
+3. **Storyboard review** — see the 6 "Open items" at the bottom of `STORYBOARD.md`
+   (logo assets, CTA copy, lower-third names, visual identity, runtime cap, consent).
+4. Next after sign-off: build with the `general-video` hyperframes skill → storyboard
+   review → render.
+
+## Commit the working files when ready
+```
+cd "C:\Users\ILANM\בדיקות קלוד קוד\landing-page-assets"
+git add hana-matalon/testimonial-video/{transcripts,scripts,SELECTS.md,STORYBOARD.md,HANDOFF.md}
+git commit -m "Add transcripts, selects, storyboard draft for testimonial-video"
+git push origin claude/video-editing-uploads-48bf9l
+```
 
 ## Transcripts + SELECTS.md are not committed yet
 
