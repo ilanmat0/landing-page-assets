@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "preferences": {
+    "destination": {
+      "value": "landing-page",
+      "confirmed_in": [
+        "testimonial-video"
+      ],
+      "updated_at": "2026-09-01T06:49:14.859Z"
+    },
+    "aspect": {
+      "value": "1080x1920",
+      "confirmed_in": [
+        "testimonial-video"
+      ],
+      "updated_at": "2026-09-01T06:49:14.912Z"
+    },
+    "language": {
+      "value": "he",
+      "confirmed_in": [
+        "testimonial-video"
+      ],
+      "updated_at": "2026-09-01T06:49:15.011Z"
+    },
+    "flow": {
+      "value": "automation",
+      "confirmed_in": [
+        "testimonial-video"
+      ],
+      "updated_at": "2026-09-01T06:49:15.076Z"
+    },
+    "storyboard": {
+      "value": "yes",
+      "confirmed_in": [
+        "testimonial-video"
+      ],
+      "updated_at": "2026-09-01T06:49:15.141Z"
+    }
+  },
+  "sightings": {}
+}
